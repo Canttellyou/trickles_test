@@ -1,0 +1,171 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "~@fortawesome/fontawesome-free/scss/solid.scss";
+@import "~@fortawesome/fontawesome-free/scss/regular.scss";
+@import "~@fortawesome/fontawesome-free/scss/brands.scss";
+
+$theme-blue: #168fff;
+
+$theme-red: #ca2400;
+$theme-red-bright: #ff0000;
+
+$theme-gray-light: #e1e1e1;
+$theme-gray: #858585;
+$theme-gray-mid: #616161;
+$theme-gray-dark: #565656;
+$theme-black: #181818;
+
+
+$default-lr-padding: 8%;
+$default-tb-padding: 0.5rem;
+$default-padding: 3rem;
+$default-modal-br-radius: 1rem;
+$default-modal-mg-top: 1.75rem;
+// Global Styling
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; //10px/16px=62.5%
+}
+
+body {
+  font-weight: 400;
+  line-height: 1.6;
+  width: 100vw;
+  overflow-x: hidden;
+  height: 100%;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+// Modals
+.modals {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: $default-padding;
+  border-radius: $default-modal-br-radius;
+}
+
+.modal-heading {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+  h2 {
+    font-size: 3rem;
+  }
+}
+.form {
+  margin-top: 2rem;
+}
+
+.auth {
+  width: 100vw;
+  font-size: 2rem;
+  color: $theme-blue;
+  font-weight: 700;
+  margin-top: $default-modal-mg-top;
+  text-transform: uppercase;
+  text-align: center;
+  border-bottom: 1.5px solid $theme-blue;
+  &-one {
+    margin-top: $default-modal-mg-top;
+  }
+}
+
+.auth-one {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: $default-modal-mg-top;
+  font-family: "Segoe UI", sans-serif;
+  p {
+    margin-top: 1.5rem;
+    font-size: 1.6rem;
+    text-align: center;
+  }
+}
+
+.side-inputs {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  .fields {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    //Labels
+    label {
+      color: $theme-gray-dark;
+      font-size: 1.75rem;
+      margin-top: 2rem;
+      span {
+        color: $theme-red-bright;
+        font-size: 2rem;
+      }
+    }
+
+    // Inputs
+    input,
+    select {
+      outline: none;
+      border: none;
+      border: 1px solid $theme-gray-light;
+      font-size: 1.5rem;
+      border-radius: 0.5rem;
+      padding: 1rem;
+      :focus {
+        outline: none;
+        border: none;
+      }
+    }
+    .input-error {
+      color: $theme-red;
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.privacy-policy {
+  font-size: 1.75rem;
+  color: $theme-gray-mid;
+  margin-top: 2rem;
+  text-align: center;
+
+  a:link,
+  a:active,
+  a:visited {
+    color: $theme-blue;
+  }
+}
+
+.submit-btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.btn-primary {
+  background-color: $theme-blue;
+  border: none;
+  color: white;
+  border-radius: 0.2rem;
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.CountryNumberInput {
+  width: 100% !important;
+  padding: 1.745rem !important;
+  border: none;
+  outline: none;
+}

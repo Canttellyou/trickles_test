@@ -1,0 +1,120 @@
+<div class="modals">
+    <div class="modal-heading">
+        <img src="assets/images/logo.svg" alt="">
+        <h2>Trickles</h2>
+    </div>
+    <div class="auth register">
+        Register
+    </div>
+    <div class="auth-one">
+        <img src="assets/images/process-one.svg" alt="process-one">
+        <p class="message">Open a Trickle account with a few details. Your password must be at least 8 characters
+            including letter and a number.</p>
+    </div>
+    <form class="form" (submit)="handleSignup()" [formGroup]="signupForm">
+        <div class="side-inputs">
+            <!-- Surname -->
+            <div class="fields">
+                <label>Surname <span>*</span></label>
+
+                <input type="text" class="form-control" formControlName="surname" />
+                <ng-container *ngIf="surname?.touched">
+                    <p *ngIf="surname?.errors?.['required']" class="input-error">
+                        Surname is required
+                    </p>
+                </ng-container>
+            </div>
+
+            <!-- Other names -->
+            <div class="fields">
+                <label>Other Names <span>*</span></label>
+
+                <input type="text" class="form-control" formControlName="other_names" />
+                <ng-container *ngIf="other_names?.touched">
+                    <p *ngIf="other_names?.errors?.['required']" class="input-error">
+                        Other names is required
+                    </p>
+                </ng-container>
+            </div>
+        </div>
+
+        <div class="side-inputs">
+            <!-- ID Type -->
+            <div class="fields">
+                <label>Identification Type <span>*</span></label>
+
+                <select formControlName="id_type" class="form-control">
+                    <option value="">--Select ID Type--</option>
+                    <option *ngFor="let id of IDs" value="{{id.id_type_id}}">{{id.id_desc}}</option>
+                </select>
+
+                <ng-container *ngIf="id_type?.touched">
+                    <p *ngIf="id_type?.errors?.['required']" class="input-error">
+                        Identification Type is required
+                    </p>
+                </ng-container>
+            </div>
+
+            <!-- ID Type -->
+            <div class="fields">
+                <label>Identification Number <span>*</span></label>
+
+                <input type="text" class="form-control" formControlName="id_number" />
+                <ng-container *ngIf="id_number?.touched">
+                    <p *ngIf="id_number?.errors?.['required']" class="input-error">
+                        Identification Number is required
+                    </p>
+                </ng-container>
+            </div>
+        </div>
+
+
+        <div class="side-inputs">
+
+            <!-- Mobile number -->
+            <div class="fields">
+                <label>Mobile Number <span>*</span></label>
+                <intl-input-phone class="form-control" formControlName="mobile_number"></intl-input-phone>
+                <ng-container *ngIf="mobile_number?.touched">
+                    <p *ngIf="mobile_number?.errors?.['required']" class="input-error">
+                        Mobile number is required
+                    </p>
+                </ng-container>
+            </div>
+
+            <!-- Pin -->
+            <div class="fields">
+                <label>Pin <span>*</span></label>
+
+                <input type="password" class="form-control" formControlName="pin" />
+                <ng-container *ngIf="pin?.touched">
+                    <p *ngIf="pin?.errors?.['required']"class="input-error" >
+                        Password is required
+                    </p>
+                    <p *ngIf="pin?.errors?.['minlength']" class="input-error">
+                        Must exceed 5 chars
+                    </p>
+                </ng-container>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <div class="privacy-policy">Your personal data will be used to support your experience throughout this website,
+            to manage access to your account,
+            and for other purposes described in our <a routerLink="/" routerLinkActive="active"
+                ariaCurrentWhenActive="page">privacy policy</a>.</div>
+
+
+        <div class="submit-btn">
+            <button class="btn-primary">
+                <div>CONTINUE</div> <img src="assets/images/arrow-continue.svg" alt="continue">
+            </button>
+        </div>
+    </form>
+</div>

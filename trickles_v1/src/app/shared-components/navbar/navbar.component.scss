@@ -1,0 +1,41 @@
+$theme-blue: #168fff;
+$theme-red: #ca2400;
+$theme-black: #181818;
+$default-lr-padding: 8%;
+$default-tb-padding: 0.5rem;
+
+.nav {
+  background-color: $theme-blue;
+  width: 100%;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5rem;
+  padding: $default-tb-padding $default-lr-padding;
+}
+
+.page-changes {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  .registration {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    a:link,
+    a:active,
+    a:visited {
+      color: white;
+      text-decoration: none;
+    }
+  }
+}
+.dot {
+  border: 0.6px solid #ffffff;
+}
+.line {
+  height: 2rem;
+  border: 0.6px solid #ffffff;
+}
